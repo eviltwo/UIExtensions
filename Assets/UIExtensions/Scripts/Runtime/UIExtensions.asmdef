@@ -1,0 +1,14 @@
+{
+    "name": "eviltwo.UIExtensions",
+    "rootNamespace": "eviltwo.UIExtensions",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
