@@ -1,7 +1,9 @@
 {
     "name": "eviltwo.UIExtensions",
     "rootNamespace": "eviltwo.UIExtensions",
-    "references": [],
+    "references": [
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
@@ -9,6 +11,12 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.inputsystem",
+            "expression": "",
+            "define": "UNITY_INPUT_SYSTEM_ENABLE_UI"
+        }
+    ],
     "noEngineReferences": false
 }
