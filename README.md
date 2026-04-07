@@ -1,5 +1,5 @@
 # UI Extensions
-uGUI用のUIコンポーネントやEventSystemの拡張をまとめたパッケージです。
+uGUI用のUIコンポーネントやEventSystemの拡張をまとめたパッケージです。自分用に作成したものですが、自由に使用して構いません。
 
 想定環境：Unity 6 + uGUI + Input System
 
