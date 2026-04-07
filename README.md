@@ -1,4 +1,4 @@
-# UIExtensions
+# UI Extensions
 uGUI用のUIコンポーネントやEventSystemの拡張をまとめたパッケージです。
 
 想定環境：Unity 6 + uGUI + Input System
