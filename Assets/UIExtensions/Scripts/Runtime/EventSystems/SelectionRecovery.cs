@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace eviltwo.UIExtensions.EventSystems
 {
-    public class SelectionRecover : MonoBehaviour
+    public class SelectionRecovery : MonoBehaviour
     {
         private GameObject _lastSelected;
 
