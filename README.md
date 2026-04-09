@@ -3,7 +3,7 @@ uGUI用のUIコンポーネントやEventSystemの拡張をまとめたパッケ
 
 想定環境：Unity 6 + uGUI + Input System
 
-# UPMでインストールできます
+# UPMからインストールできます
 ```
 https://github.com/eviltwo/UIExtensions.git?path=Assets/UIExtensions
 ```
@@ -11,7 +11,8 @@ https://github.com/eviltwo/UIExtensions.git?path=Assets/UIExtensions
 # 内容
 |UI||
 |---|---|
-|ValueDriver|十字キー入力によってfloat値が増減する、見えないSliderのようなコンポーネントです。OnValueChangedイベントをText, Button, TextFieldなどに繋げれば、キーボード操作とマウス操作の両方で値の増減ができます。|
+|ValueDriver|<img width="340" height="45" alt="image" src="https://github.com/user-attachments/assets/eb36823d-9d83-4934-ab3e-81fa11699f58" /><br>十字キー入力によってfloat値が増減する、見えないSliderのようなコンポーネントです。OnValueChangedイベントをText, Button, TextFieldなどに繋げれば、キーボード操作とマウス操作の両方で値の増減ができます。|
+|InputActionEventTrigger|標準では用意されていない入力イベントを利用できるようになります。L/Rトリガーでページを切り替える際などに便利です。<br>ValueDriverにInputActionを登録して、イベントを受け取るUIにこのコンポーネントアタッチしてください。|
 
 |Event Systems||
 |---|---|
