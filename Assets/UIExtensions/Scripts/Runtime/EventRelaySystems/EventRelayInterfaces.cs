@@ -15,4 +15,9 @@ namespace eviltwo.UIExtensions.EventRelaySystems
     {
         void OnSubmit(BaseEventData eventData);
     }
+
+    public interface IInputActionRelayHandler : IEventRelaySystemHandler
+    {
+        void OnInputAction(InputActionEventData eventData);
+    }
 }

@@ -1,6 +1,7 @@
 #if UNITY_INPUT_SYSTEM_ENABLE_UI
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
 
 namespace eviltwo.UIExtensions.EventRelaySystems
@@ -8,6 +9,8 @@ namespace eviltwo.UIExtensions.EventRelaySystems
     public class EventRelaySystem : MonoBehaviour
     {
         public bool InvokeEvenIfHandledByEventSystem = false;
+
+        public InputActionReference[] InputActions = System.Array.Empty<InputActionReference>();
 
         private void Update()
         {
@@ -37,6 +40,22 @@ namespace eviltwo.UIExtensions.EventRelaySystems
                 var handler = GetHandler<ISubmitRelayHandler>(selectedObject);
                 if (handler != null) handler.OnSubmit(new BaseEventData(eventSystem));
             }
+
+            for (var i = 0; i < InputActions.Length; i++)
+            {
+                var inputAction = InputActions[i]?.action;
+                if (inputAction == null) continue;
+                if (inputAction.WasPerformedThisDynamicUpdate())
+                {
+                    var handler = GetHandler<IInputActionRelayHandler>(selectedObject);
+                    if (handler == null) continue;
+                    handler.OnInputAction(new InputActionEventData(eventSystem)
+                    {
+                        ActionName = inputAction.name,
+                        ActionIndex = i
+                    });
+                }
+            }
         }
 
         private static bool IsHandledByEventSystem<T>(GameObject target) where T : IEventSystemHandler
@@ -47,6 +66,17 @@ namespace eviltwo.UIExtensions.EventRelaySystems
         private T GetHandler<T>(GameObject target) where T : IEventRelaySystemHandler
         {
             return target.GetComponentInParent<T>(includeInactive: false);
+        }
+    }
+
+    public class InputActionEventData : BaseEventData
+    {
+        public string ActionName { get; set; }
+
+        public int ActionIndex { get; set; }
+
+        public InputActionEventData(EventSystem eventSystem) : base(eventSystem)
+        {
         }
     }
 }
