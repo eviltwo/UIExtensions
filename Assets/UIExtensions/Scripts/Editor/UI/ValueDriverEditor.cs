@@ -24,6 +24,7 @@ namespace eviltwo.UIExtensions
         private SerializedProperty _onValueChanged;
         private SerializedProperty _eventStringFormat;
         private SerializedProperty _onValueChangedString;
+        private SerializedProperty _invokeOnStart;
 
         protected override void OnEnable()
         {
@@ -39,6 +40,7 @@ namespace eviltwo.UIExtensions
             _onValueChanged = serializedObject.FindProperty("_onValueChanged");
             _eventStringFormat = serializedObject.FindProperty("_eventStringFormat");
             _onValueChangedString = serializedObject.FindProperty("_onValueChangedString");
+            _invokeOnStart = serializedObject.FindProperty("_invokeOnStart");
         }
 
         public override void OnInspectorGUI()
@@ -53,6 +55,10 @@ namespace eviltwo.UIExtensions
             EditorGUILayout.PropertyField(_deltaValue);
             EditorGUILayout.PropertyField(_value);
             EditorGUILayout.PropertyField(_direction);
+
+            EditorGUILayout.Space();
+
+            EditorGUILayout.PropertyField(_invokeOnStart);
 
             EditorGUILayout.Space();
 

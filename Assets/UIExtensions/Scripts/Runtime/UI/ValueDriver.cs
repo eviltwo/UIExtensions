@@ -111,6 +111,15 @@ namespace eviltwo.UIExtensions.UI
 
         public ValueDriverEventString OnValueChangedString => _onValueChangedString;
 
+        [SerializeField]
+        private bool _invokeOnStart = true;
+
+        public bool InvokeOnStart
+        {
+            get => _invokeOnStart;
+            set => _invokeOnStart = value;
+        }
+
 #if UNITY_EDITOR
         private bool _delayedInvokeEventInEditor;
 
@@ -136,7 +145,10 @@ namespace eviltwo.UIExtensions.UI
         protected override void Start()
         {
             base.Start();
-            InvokeValueChanged();
+            if (_invokeOnStart)
+            {
+                InvokeValueChanged();
+            }
         }
 
 #if UNITY_EDITOR
