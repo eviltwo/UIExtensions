@@ -235,7 +235,17 @@ namespace eviltwo.UIExtensions.UI
         private void InvokeValueChanged()
         {
             OnValueChanged.Invoke(_value);
-            OnValueChangedString.Invoke(_value.ToString(_eventStringFormat));
+            string text;
+            try
+            {
+                text = _value.ToString(_eventStringFormat);
+            }
+            catch (FormatException)
+            {
+                text = ((int)_value).ToString(_eventStringFormat);
+            }
+
+            OnValueChangedString.Invoke(text);
         }
 
         private float ClampValue(float value)
