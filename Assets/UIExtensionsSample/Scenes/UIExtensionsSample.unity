@@ -2158,7 +2158,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _eventStringFormat: F1
+  _eventStringFormat: F2
   _onValueChangedString:
     m_PersistentCalls:
       m_Calls:
